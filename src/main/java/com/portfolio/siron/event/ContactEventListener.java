@@ -18,7 +18,7 @@ public class ContactEventListener {
     @EventListener
     @Async
     public void onContact(ContactEvent event) throws MessagingException {
-        final var contact = (Contact) event.getSource();
+        final Contact contact = (Contact) event.getSource();
 
         emailService.sendEmail(contact.getEmail(), contact.getName());
     }
